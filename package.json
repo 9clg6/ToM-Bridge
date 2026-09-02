@@ -1,0 +1,55 @@
+{
+  "name": "@twake/tom-bridge",
+  "description": "A Twake Workplace Matrix Application Service automating user management based on TWP Events",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "files": [
+    "dist",
+    "bin"
+  ],
+  "exports": {
+    "./package.json": "./package.json"
+  },
+  "license": "AGPL-3.0-or-later",
+  "repository": "github:linagora/tom-bridge",
+  "homepage": "https://github.com/linagora/tom-bridge?tab=readme-ov-file",
+  "bugs": {
+    "url": "https://github.com/linagora/tom-bridge/issues"
+  },
+  "scripts": {
+    "dev": "bun --watch run ./src/index.ts",
+    "start": "bun run ./src/index.ts",
+    "type-check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.4.0",
+    "@types/pg": "^8.23.1",
+    "@types/sqlite3": "^5.1.0",
+    "bunup": "^0.16.32",
+    "typescript": "^7.0.2"
+  },
+  "peerDependencies": {
+    "typescript": ">=4.5.0"
+  },
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "@linagora/rabbitmq-client": "^0.2.1",
+    "matrix-appservice-bridge": "12.0.0",
+    "pg": "^8.23.0",
+    "pino": "^10.3.1",
+    "sqlite3": "^6.0.1"
+  },
+  "trustedDependencies": [
+    "@matrix-org/matrix-sdk-crypto-nodejs",
+    "sqlite3"
+  ],
+  "patchedDependencies": {
+    "@vector-im/matrix-bot-sdk@0.10.0-element.0": "patches/@vector-im%2Fmatrix-bot-sdk@0.10.0-element.0.patch",
+    "@matrix-org/matrix-sdk-crypto-nodejs@0.6.6": "patches/@matrix-org%2Fmatrix-sdk-crypto-nodejs@0.6.6.patch"
+  }
+}
