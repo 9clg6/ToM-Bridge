@@ -1,0 +1,6 @@
+# .convco - Convco configuration
+commitUrlFormat: 'https://github.com/linagora/tom-bridge/commit/{{hash}}'
+compareUrlFormat: 'https://github.com/linagora/tom-bridge/compare/{{previousTag}}...{{currentTag}}'
+issueUrlFormat: 'https://github.com/linagora/tom-bridge/issues/{{issue}}'
+releaseCommitMessageFormat: 'chore(release): {{currentTag}}'
+header: '# Changelog\n\n'
