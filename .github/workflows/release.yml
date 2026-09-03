@@ -67,7 +67,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
           repository: linagora/tom-bridge
           short-description: "ToM Bridge - Matrix Application Service for Twake Workplace"
-          readme-filepath: doc/Docker.md
+          readme-filepath: docs/Docker.md
 
   github-release:
     needs: docker
