@@ -137,7 +137,9 @@ in
       mv package.json.tmp package.json
 
       # Generate changelog
-      convco changelog -o CHANGELOG.md
+      convco changelog -u ''${TAG} | sed 's/\\n/\n/g' > CHANGELOG.md
+      echo -e '\n<!-- markdownlint-disable-file MD024 -->' >> CHANGELOG.md
+      markdownlint -f CHANGELOG.md
 
       # Commit and tag
       git add package.json CHANGELOG.md
