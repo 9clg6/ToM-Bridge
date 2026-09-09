@@ -1,11 +1,8 @@
 # Changelog
 
-## [v1.0.0](https://github.com/linagora/tom-bridge/compare/v0.1.0...a3a30d82afd5f653f5acddc83170fb1979dce991) (2026-09-03)
+## [v1.0.1](https://github.com/linagora/tom-bridge/compare/v1.0.0...b565036793b7c0c93f7cb5ad61a1a4076817cb9a) (2026-09-09)
 
-This version is only an import of the original
-code of the bridge one can found on the
-[ToM-Server](https://github.com/linagora/ToM-server/tree/v2026-07-30/packages/common-settings-bridge)
-repository.
+## v1.0.0 (2026-09-03)
 
 ### Features
 
