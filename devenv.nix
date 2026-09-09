@@ -5,7 +5,7 @@
 }:
 
 let
-  domain = "twake.localhost";
+  domain = "twake.internal";
   stateDir = config.env.DEVENV_STATE;
 in
 {

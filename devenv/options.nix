@@ -10,7 +10,7 @@ in
   options.twake = {
     domain = lib.mkOption {
       type = t.str;
-      default = "twake.localhost";
+      default = "twake.internal";
       description = "Base domain for all Twake local services.";
     };
 

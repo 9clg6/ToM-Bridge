@@ -89,8 +89,8 @@ running as an auto-reloading (`bun dev`, watch mode) process.
 
 Once running, the local services are available at:
 
-- **Caddy**: `https://twake.localhost:8443`
-- **Synapse**: `https://matrix.twake.localhost:8443`
+- **Caddy**: `https://twake.internal:8443`
+- **Synapse**: `https://matrix.twake.internal:8443`
 - **RabbitMQ**: `127.0.0.1:5672`
 - **Postgres**: `127.0.0.1:5432`
 - **ToM Bridge**: `bun dev` (watch mode) under `devenv up`
