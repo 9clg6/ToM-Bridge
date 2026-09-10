@@ -1,6 +1,8 @@
 # Changelog
 
-## [v1.0.1](https://github.com/linagora/tom-bridge/compare/v1.0.0...b565036793b7c0c93f7cb5ad61a1a4076817cb9a) (2026-09-09)
+## [v1.0.2](https://github.com/linagora/tom-bridge/compare/v1.0.1...f06c430c06528aee281fa8f398160febaf952508) (2026-09-10)
+
+### [v1.0.1](https://github.com/linagora/tom-bridge/compare/v1.0.0...v1.0.1) (2026-09-09)
 
 ## v1.0.0 (2026-09-03)
 
