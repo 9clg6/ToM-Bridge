@@ -15,18 +15,18 @@ certificates needed for outbound HTTPS connections.
 
 ```bash
 docker run --rm \
-  -v /path/to/config.yaml:/app/config.yaml:ro \
-  -v /path/to/registration.yaml:/app/registration.yaml:ro \
+  -v /path/to/config.yaml:/data/config.yaml:ro \
+  -v /path/to/registration.yaml:/data/registration.yaml:ro \
   tom-bridge
 ```
 
-The entrypoint runs `tom-bridge -c /app/config.yaml`. The container expects
-two YAML files mounted into `/app`:
+The entrypoint runs `tom-bridge -c /data/config.yaml`. The container expects
+two YAML files mounted into `/data`:
 
 * **config.yaml** (required) tells the bridge how to reach Synapse, PostgreSQL,
   and RabbitMQ.
 * **registration.yaml** (optional) is the Synapse Application Service
-  registration. It defaults to `/app/registration.yaml` via the
+  registration. It defaults to `/data/registration.yaml` via the
   `REGISTRATION_FILE` environment variable. If your config file already points
   to the registration file through `registrationPath`, you may omit the separate
   `-f` mount.
@@ -38,10 +38,10 @@ them after the image name:
 
 ```bash
 docker run --rm \
-  -v /path/to/config.yaml:/app/config.yaml:ro \
+  -v /path/to/config.yaml:/data/config.yaml:ro \
   tom-bridge \
-  -c /app/config.yaml \
-  -f /app/registration.yaml \
+  -c /data/config.yaml \
+  -f /data/registration.yaml \
   -p 8008
 ```
 
@@ -52,7 +52,7 @@ If you mount the registration file to a non default location, set the
 
 ```bash
 docker run --rm \
-  -v /path/to/config.yaml:/app/config.yaml:ro \
+  -v /path/to/config.yaml:/data/config.yaml:ro \
   -v /path/to/registration.yaml:/etc/tom-bridge/registration.yaml:ro \
   -e REGISTRATION_FILE=/etc/tom-bridge/registration.yaml \
   tom-bridge
@@ -67,7 +67,7 @@ The bridge configuration requires the following sections:
 ```yaml
 homeserverUrl: 'http://synapse:8008'
 domain: 'your.homeserver.com'
-registrationPath: '/app/registration.yaml'
+registrationPath: '/data/registration.yaml'
 
 synapse:
   adminRetryMode: 'fallback'
@@ -133,5 +133,5 @@ tools to make these services available to the bridge container.
 
 ## Environment Variables
 
-* `REGISTRATION_FILE` (default `/app/registration.yaml`): path to the Synapse
+* `REGISTRATION_FILE` (default `/data/registration.yaml`): path to the Synapse
   registration file inside the container.

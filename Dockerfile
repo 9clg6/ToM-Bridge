@@ -4,9 +4,8 @@
 # Usage:
 #   docker build -t tom-bridge .
 #   docker run
-#       -v /path/to/config.yaml:/app/config.yaml:ro
-#       -v /path/to/registration.yaml:/app/registration.yaml:ro
-#       -e REGISTRATION_FILE=/app/registration.yaml
+#       -v /path/to/config.yaml:/data/config.yaml:ro
+#       -v /path/to/registration.yaml:/data/registration.yaml:ro
 #       --rm tom-bridge
 # =============================================================================
 
@@ -31,10 +30,11 @@ RUN bunx bunup
 FROM docker.io/debian:stable-slim AS runtime
 
 WORKDIR /app
+RUN mkdir -p /data
 
 COPY package.json ./
 COPY --from=builder /app/bin/tom-bridge ./
 
-ENV REGISTRATION_FILE=/app/registration.yaml
+ENV REGISTRATION_FILE=/data/registration.yaml
 
-ENTRYPOINT ["./tom-bridge", "-c", "/app/config.yaml"]
+ENTRYPOINT ["./tom-bridge", "-c", "/data/config.yaml"]
