@@ -54,7 +54,6 @@ jobs:
   biome:
     needs: detect-changes
     if: needs.detect-changes.outputs.biome == 'true'
-    name: Lint
     runs-on: ubuntu-latest
     continue-on-error: true
     steps:
