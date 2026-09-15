@@ -120,6 +120,8 @@ submit Merge Requests.
 
 Huge shout-out to all our participants!
 
+- [@Montassar Ghanmy](https://github.com/MontaGhanmy)
+
 #### Maintainers
 
 - Pierre 'McFly' Marty <pmarty@linagora.com>
